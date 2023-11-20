@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : Matrices1.c
+ Name        : Matrices3.c
  Author      : 
  Version     :
  Copyright   : Your copyright notice
@@ -13,9 +13,10 @@
 #include "matrices.h"
 
 int main(void) {
-	int filas,cols, matriz[MAX][MAX],num;
+	int filas,cols,matriz[MAX][MAX];
+	int num;
 
-	puts("Rellena una matriz con un número");
+	puts("Devuelve numero si todos los elementos de la matriz son iguales a num");
 
 	do{
 		printf("Introduce el númro de filas (1-%d): ",MAX);
@@ -29,13 +30,16 @@ int main(void) {
 		scanf("%d",&cols);
 	}while(cols<=0 || cols>MAX);
 
-	printf("Introduce el numero para rellenar la matriz:");
+	pedirMatriz(filas,cols,matriz);
+
+	puts("Introduce un numero para comprobar: ");
 	fflush(stdout);
 	scanf("%d",&num);
-	numIguales(filas,cols,matriz,num);
-
-	puts("La matriz es:");
-	mostrarMatriz(filas,cols,matriz);
+	if(matrizIguales(filas,cols,matriz,num)==1){
+		puts("Todos los numeros de la matriz son iguales");
+	}else{
+		puts("No todos los números de la matriz son iguales");
+	}
 
 	return EXIT_SUCCESS;
 }

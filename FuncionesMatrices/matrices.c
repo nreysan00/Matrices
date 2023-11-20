@@ -67,3 +67,27 @@ int matrizNula(int filas, int cols, int matriz[][MAX]) {
 	}
 	return 1;
 }
+
+int matrizIguales(int filas, int cols, int matriz[][MAX],int num) {
+	int i,j;
+	for(i=0; i<filas; i++){
+		for(j=0; j<cols ; j++){
+			if(matriz[i][j]!=num){
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
+
+int trianSuperior(int filas, int cols, int matriz[][MAX]) {
+	int i,j;
+	for(i=0; i<filas ; i++){
+		for(j=0; j<cols ; j++){
+			if(matriz[i+1][j]!=0 && matriz[i+2][j]!=0 && matriz[i+2][j+1]!=0){
+				return 0;
+			}
+		}
+	}
+	return 1;
+}

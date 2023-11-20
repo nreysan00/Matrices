@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : Matrices1.c
+ Name        : Matrices4.c
  Author      : 
  Version     :
  Copyright   : Your copyright notice
@@ -13,9 +13,9 @@
 #include "matrices.h"
 
 int main(void) {
-	int filas,cols, matriz[MAX][MAX],num;
+	int filas,cols,matriz[MAX][MAX];
 
-	puts("Rellena una matriz con un número");
+	puts("¿Es una matriz triangular superior?");
 
 	do{
 		printf("Introduce el númro de filas (1-%d): ",MAX);
@@ -29,13 +29,13 @@ int main(void) {
 		scanf("%d",&cols);
 	}while(cols<=0 || cols>MAX);
 
-	printf("Introduce el numero para rellenar la matriz:");
-	fflush(stdout);
-	scanf("%d",&num);
-	numIguales(filas,cols,matriz,num);
+	pedirMatriz(filas,cols,matriz);
 
-	puts("La matriz es:");
-	mostrarMatriz(filas,cols,matriz);
+	if(trianSuperior(filas,cols,matriz)==1){
+		puts("Es una matriz triangular superior");
+	}else{
+		puts("No es una matriz triangular superior");
+	}
 
 	return EXIT_SUCCESS;
 }

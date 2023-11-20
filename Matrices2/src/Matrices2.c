@@ -11,7 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "matrices.h"
-#define MAX 30
 
 int main(void) {
 	int filas,cols,matriz[MAX][MAX];
