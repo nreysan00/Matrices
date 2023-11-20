@@ -82,9 +82,9 @@ int matrizIguales(int filas, int cols, int matriz[][MAX],int num) {
 
 int trianSuperior(int filas, int cols, int matriz[][MAX]) {
 	int i,j;
-	for(i=0; i<filas ; i++){
-		for(j=0; j<cols ; j++){
-			if(matriz[i+1][j]!=0 && matriz[i+2][j]!=0 && matriz[i+2][j+1]!=0){
+	for(i=1; i<filas ; i++){
+		for(j=0; j<i ; j++){
+			if(matriz[i][j]!=0){
 				return 0;
 			}
 		}
